@@ -57,6 +57,7 @@ function toggle(event?: MouseEvent) {
 
 <template>
   <button @click="toggle">
-    <UIcon :name="isDark ? 'i-carbon-sun' : 'i-carbon-moon'" class="w-8 h-8" />
+    <IconMoon v-show="!isDark"/>
+    <IconSun v-show="isDark"/>
   </button>
 </template>
