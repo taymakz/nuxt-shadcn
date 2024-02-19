@@ -57,7 +57,7 @@ function toggle(event?: MouseEvent) {
 
 <template>
   <button @click="toggle">
-    <IconMoon v-show="!isDark"/>
-    <IconSun v-show="isDark"/>
+    <IconMoon class="dark:hidden"/>
+    <IconSun class="hidden dark:block"/>
   </button>
 </template>
