@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.1.0
     version: 2.1.0
   lucide-vue-next:
-    specifier: ^0.312.0
-    version: 0.312.0(vue@3.4.19)
+    specifier: ^0.334.0
+    version: 0.334.0(vue@3.4.19)
   radix-vue:
     specifier: ^1.4.7
     version: 1.4.7(vue@3.4.19)
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.19)
   shadcn-nuxt:
-    specifier: ^0.8.7
-    version: 0.8.7
+    specifier: ^0.9.0
+    version: 0.9.0
   typescript:
     specifier: latest
     version: 5.3.3
@@ -5699,6 +5699,15 @@ packages:
       vue: '>=3.0.1'
     dependencies:
       vue: 3.4.19(typescript@5.3.3)
+    dev: true
+
+  /lucide-vue-next@0.334.0(vue@3.4.19):
+    resolution: {integrity: sha512-ZHA4Wl0fEMgkUZ+FmYRXjtdnABDW77ydxo+9vZ0QTP5xcfxR4JRuY7cJfTBeNh7R3AacSUoW0aa4dNt2MI85Ng==}
+    peerDependencies:
+      vue: '>=3.0.1'
+    dependencies:
+      vue: 3.4.19(typescript@5.3.3)
+    dev: false
 
   /magic-string-ast@0.3.0:
     resolution: {integrity: sha512-0shqecEPgdFpnI3AP90epXyxZy9g6CRZ+SZ7BcqFwYmtFEnZ1jpevcV5HoyVnlDS9gCnc1UIg3Rsvp3Ci7r8OA==}
@@ -7576,8 +7585,8 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
-  /shadcn-nuxt@0.8.7:
-    resolution: {integrity: sha512-svkbVvb7H38vTRhOtoaGODTEVAb22sKFjrW/3cayn9mj0VKh54Mp+9WMBgO9j9Y3sYylvAqY8EN4afJblDRvOQ==}
+  /shadcn-nuxt@0.9.0:
+    resolution: {integrity: sha512-07TT7U6J6QsuQ4UptNI36C+bYaLfuACcQS3sp1DO/qGyRSlCUc2K1hQzVFigWpiG1fcdHXmBZKzwtLtkuh/nLQ==}
     dependencies:
       '@nuxt/kit': 3.10.2
       oxc-parser: 0.2.0

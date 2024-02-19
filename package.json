@@ -16,7 +16,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "lucide-vue-next": "^0.312.0",
+    "lucide-vue-next": "^0.334.0",
     "radix-vue": "^1.4.7",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
@@ -34,7 +34,7 @@
     "nuxt": "^3.10.2",
     "nuxt-lucide-icons": "^1.0.4",
     "pinia": "^2.1.7",
-    "shadcn-nuxt": "^0.8.7",
+    "shadcn-nuxt": "^0.9.0",
     "typescript": "latest",
     "vue": "^3.4.19",
     "vue-router": "^4.2.5"
