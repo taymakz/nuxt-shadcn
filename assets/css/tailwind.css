@@ -12,6 +12,7 @@
   --muted: 0 0% 100%;
   --border: 240 5.9% 90%;
   --primary: 199 88% 48%;
+  --primary-btn: 199, 89%, 48%;
   --secondary: 240 6% 90%;
   --destructive: 0 84.2% 60.2%;
   --ring: 240 10% 3.9%;
@@ -27,6 +28,7 @@
   --muted: 270 4% 10%;
   --border: 240 3.7% 15.9%;
   --primary: 200 98% 39%;
+  --primary-btn: 200, 98%, 39%;
   --secondary: 240 4% 16%;
   --destructive: 0 62.8% 30.6%;
   --ring: 240 4.9% 83.9%;
@@ -100,7 +102,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-iranyekan;
+    @apply bg-background text-text font-iranyekan;
   }
   .dark{
     color-scheme: dark

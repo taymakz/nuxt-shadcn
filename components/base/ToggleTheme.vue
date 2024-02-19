@@ -58,6 +58,6 @@ function toggle(event?: MouseEvent) {
 <template>
   <button @click="toggle">
     <IconMoon class="dark:hidden"/>
-    <IconSun class="hidden dark:block"/>
+    <IconSun class="hidden dark:block "/>
   </button>
 </template>

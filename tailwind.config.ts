@@ -35,23 +35,24 @@ export default {
         iranyekan: 'IRANYekan',
       },
 
-       colors: {
-      white: '#FEFEFF',
-      black: '#0D0D0D',
-      border: 'hsl(var(--border))',
-      ring: 'hsl(var(--ring))',
-      background: 'hsl(var(--background))',
-      warning: 'hsl(var(--warning))',
-      success: {
-        DEFAULT: 'hsl(var(--success))',
-        secondary: 'hsl(var(--success-secondary))',
+      colors: {
+        white: '#FEFEFF',
+        black: '#0D0D0D',
+        border: 'hsl(var(--border))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        warning: 'hsl(var(--warning))',
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          secondary: 'hsl(var(--success-secondary))',
+        },
+        text: 'hsl(var(--text))',
+        primary: 'hsl(var(--primary))',
+        'primary-btn': 'hsl(var(--primary-btn))',
+        secondary: 'hsl(var(--secondary))',
+        destructive: 'hsl(var(--destructive))',
+        muted: 'hsl(var(--muted))',
       },
-      text: 'hsl(var(--text))',
-      primary: 'hsl(var(--primary))',
-      secondary: 'hsl(var(--secondary))',
-      destructive: 'hsl(var(--destructive))',
-      muted: 'hsl(var(--muted))',
-  },
 
       borderRadius: {
         lg: 'var(--radius)',
