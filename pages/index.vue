@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { appName } from '~/constants'
 
+defineOgImageComponent('NuxtSeo', {
+  title: appName,
+})
 </script>
 
 <template>
