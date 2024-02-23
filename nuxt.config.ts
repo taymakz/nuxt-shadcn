@@ -1,3 +1,4 @@
+import { pwa } from './config/pwa'
 import { appDescription, appName } from './constants/index'
 
 export default defineNuxtConfig({
@@ -24,6 +25,8 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -55,6 +58,7 @@ export default defineNuxtConfig({
     },
 
   },
+  pwa,
   lucide: {
     namePrefix: 'Icon',
   },
