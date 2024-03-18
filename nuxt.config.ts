@@ -1,4 +1,3 @@
-import { pwa } from './config/pwa'
 import { appDescription, appName } from './constants/index'
 
 export default defineNuxtConfig({
@@ -9,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'shadcn-nuxt',
     '@nuxt/image',
-    '@vite-pwa/nuxt',
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/seo',
@@ -58,7 +56,6 @@ export default defineNuxtConfig({
     },
 
   },
-  pwa,
   lucide: {
     namePrefix: 'Icon',
   },

@@ -6,7 +6,6 @@ useHead({
 </script>
 
 <template>
-  <VitePwaManifest />
   <NuxtLayout>
     <NuxtLoadingIndicator :size="3" />
     <NuxtPage />
