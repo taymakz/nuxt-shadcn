@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxi build ",
-    "dev:pwa": "SW=true nuxi dev",
+    "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
     "dev": "nuxi dev --dotenv .env.dev",
     "format": "eslint . --fix",
     "generate": "nuxi generate",

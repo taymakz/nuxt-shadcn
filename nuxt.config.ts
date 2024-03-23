@@ -1,5 +1,5 @@
+import { pwa } from './config/pwa';
 import { appDescription, appName } from './constants/index'
-const sw = process.env.SW === 'true'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -79,42 +79,7 @@ export default defineNuxtConfig({
     },
 
   },
-  pwa: {
-    strategies: sw ? 'injectManifest' : 'generateSW',
-    srcDir: sw ? 'config' : undefined,
-    filename: sw ? 'sw.ts' : undefined,
-    registerType: 'autoUpdate',
-    manifest: {
-      name: 'Font Changer',
-      short_name: 'FC',
-      theme_color: '#09090B',
-      icons: [
-        {
-          src: 'pwa-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },
-        {
-          src: 'pwa-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
-        {
-          src: 'maskable-icon.png',
-          sizes: '512x512',
-          type: 'image/png',
-          purpose: 'any maskable',
-        },
-      ],
-    },
-    devOptions: {
-      enabled: true,
-      suppressWarnings: true,
-      navigateFallback: '/',
-      navigateFallbackAllowlist: [/^\/$/],
-      type: 'module',
-    },
-  },
+  pwa,
   lucide: {
     namePrefix: 'Icon',
   },

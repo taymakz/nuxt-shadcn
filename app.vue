@@ -6,7 +6,8 @@ useHead({
 </script>
 
 <template>
-    <NuxtPwaAssets />
+  <NuxtPwaAssets />
+
   <NuxtLayout>
     <NuxtLoadingIndicator :size="3" />
     <NuxtPage />
