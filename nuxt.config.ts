@@ -1,4 +1,5 @@
 import { appDescription, appName } from './constants/index'
+const sw = process.env.SW === 'true'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -12,7 +13,29 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/seo',
     'nuxt-lucide-icons',
+    '@vite-pwa/nuxt',
+    '@nuxt/eslint',
+    "nuxt-build-cache",
+    "nuxt-security"
   ],
+  experimental: {
+    watcher: 'parcel', // 'chokidar' or 'parcel' are also options
+    payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true,
+  },
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext',
+      },
+    },
+    prerender: {
+      routes: [
+        '/'
+      ],
+    },
+  },
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
@@ -56,6 +79,42 @@ export default defineNuxtConfig({
     },
 
   },
+  pwa: {
+    strategies: sw ? 'injectManifest' : 'generateSW',
+    srcDir: sw ? 'config' : undefined,
+    filename: sw ? 'sw.ts' : undefined,
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Font Changer',
+      short_name: 'FC',
+      theme_color: '#09090B',
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+        {
+          src: 'maskable-icon.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
+    },
+    devOptions: {
+      enabled: true,
+      suppressWarnings: true,
+      navigateFallback: '/',
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
+    },
+  },
   lucide: {
     namePrefix: 'Icon',
   },
@@ -76,5 +135,15 @@ export default defineNuxtConfig({
   },
   tailwindcss: {
     viewer: false,
+  },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
   },
 })
