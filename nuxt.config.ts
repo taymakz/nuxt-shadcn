@@ -15,8 +15,7 @@ export default defineNuxtConfig({
     'nuxt-lucide-icons',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
-    "nuxt-build-cache",
-    "nuxt-security"
+    "nuxt-build-cache"
   ],
   experimental: {
     watcher: 'parcel', // 'chokidar' or 'parcel' are also options
@@ -106,9 +105,5 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
-  security: {
-    headers: {
-      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
-    },
-  },
+
 })
