@@ -1,4 +1,4 @@
-export const emailRegex = /^\S+@\S+\.\S+$/
+export const emailRegex = /^\S[^\s@]*@\S[^\s.]*\.\S+$/
 export const phoneRegex = /^(\+98|0)?9\d{9}$/
 export const postalCodeRegex = /^\d{10}$/
 export const nationalCodeRegex = /^\d{10}$/
@@ -56,5 +56,8 @@ export function validateNationalCode(nationalCode: string): boolean {
 
   const remainder = sum % 11
 
-  return (remainder < 2 && check === remainder) || (remainder >= 2 && check + remainder === 11)
+  return (
+    (remainder < 2 && check === remainder)
+    || (remainder >= 2 && check + remainder === 11)
+  )
 }

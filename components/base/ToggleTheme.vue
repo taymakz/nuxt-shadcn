@@ -9,7 +9,8 @@ const isDark = computed<boolean>({
   },
 })
 
-const isAppearanceTransition = typeof document !== 'undefined'
+const isAppearanceTransition
+  = typeof document !== 'undefined'
   // @ts-expect-error: Transition API
   && document.startViewTransition
   && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -39,9 +40,7 @@ function toggle(event?: MouseEvent) {
     ]
     document.documentElement.animate(
       {
-        clipPath: isDark.value
-          ? [...clipPath].reverse()
-          : clipPath,
+        clipPath: isDark.value ? [...clipPath].reverse() : clipPath,
       },
       {
         duration: 500,
@@ -56,8 +55,11 @@ function toggle(event?: MouseEvent) {
 </script>
 
 <template>
-  <button @click="toggle" class="border p-2 rounded-lg hover:bg-background duration-300">
-    <IconMoon class="dark:hidden"/>
-    <IconSun class="hidden dark:block "/>
+  <button
+    class="rounded-lg border p-2 duration-300 hover:bg-background"
+    @click="toggle"
+  >
+    <IconMoon class="dark:hidden" />
+    <IconSun class="hidden dark:block" />
   </button>
 </template>

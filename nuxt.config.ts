@@ -1,4 +1,4 @@
-import { pwa } from './config/pwa';
+import { pwa } from './config/pwa'
 import { appDescription, appName } from './constants/index'
 
 export default defineNuxtConfig({
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     'nuxt-lucide-icons',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
-    "nuxt-build-cache"
+    'nuxt-build-cache',
   ],
   experimental: {
     watcher: 'parcel', // 'chokidar' or 'parcel' are also options
@@ -30,9 +30,7 @@ export default defineNuxtConfig({
       },
     },
     prerender: {
-      routes: [
-        '/'
-      ],
+      routes: ['/'],
     },
   },
   app: {
@@ -51,12 +49,22 @@ export default defineNuxtConfig({
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#F4F4F5' },
-        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#09090B' },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black-translucent',
+        },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: light)',
+          content: '#F4F4F5',
+        },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: dark)',
+          content: '#09090B',
+        },
       ],
     },
-
   },
   site: {
     url: 'https://example.com',
@@ -76,7 +84,6 @@ export default defineNuxtConfig({
         colorMode: 'dark',
       },
     },
-
   },
   pwa,
   lucide: {
@@ -105,5 +112,4 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
-
 })

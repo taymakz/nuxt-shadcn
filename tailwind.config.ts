@@ -26,7 +26,6 @@ export default {
     },
 
     extend: {
-
       spacing: {
         25: '6.25rem',
         50: '12.5rem',
@@ -36,25 +35,25 @@ export default {
       },
 
       colors: {
-        white: '#FEFEFF',
-        black: '#0D0D0D',
-        border: 'hsl(var(--border))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        warning: 'hsl(var(--warning))',
-        success: {
+        'white': '#FEFEFF',
+        'black': '#0D0D0D',
+        'border': 'hsl(var(--border))',
+        'ring': 'hsl(var(--ring))',
+        'background': 'hsl(var(--background))',
+        'warning': 'hsl(var(--warning))',
+        'success': {
           DEFAULT: 'hsl(var(--success))',
           secondary: 'hsl(var(--success-secondary))',
         },
-        alert: 'hsl(var(--alert))',
-        blue: 'hsl(var(--blue))',
-        cyan: 'hsl(var(--cyan))',
-        text: 'hsl(var(--text))',
-        primary: 'hsl(var(--primary))',
+        'alert': 'hsl(var(--alert))',
+        'blue': 'hsl(var(--blue))',
+        'cyan': 'hsl(var(--cyan))',
+        'text': 'hsl(var(--text))',
+        'primary': 'hsl(var(--primary))',
         'primary-btn': 'hsl(var(--primary-btn))',
-        secondary: 'hsl(var(--secondary))',
-        destructive: 'hsl(var(--destructive))',
-        muted: 'hsl(var(--muted))',
+        'secondary': 'hsl(var(--secondary))',
+        'destructive': 'hsl(var(--destructive))',
+        'muted': 'hsl(var(--muted))',
       },
 
       borderRadius: {
@@ -64,7 +63,6 @@ export default {
       },
 
       keyframes: {
-
         'accordion-down': {
           from: { height: 0 },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -115,7 +113,10 @@ export default {
             )}")`,
           }),
         },
-        { values: flattenColorPalette(theme('backgroundColor')), type: 'color' },
+        {
+          values: flattenColorPalette(theme('backgroundColor')),
+          type: 'color',
+        },
       )
     },
   ],

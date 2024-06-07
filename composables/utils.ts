@@ -19,7 +19,6 @@ export function useCapitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-
 interface useTimerArgs {
   second?: number
   minute?: number
@@ -32,17 +31,23 @@ export function useTimer(option: useTimerArgs) {
     = (option.second || 0) * 1000
     + (option.minute || 0) * 60 * 1000
     + (option.hour || 0) * 60 * 60 * 1000
-    // Calculate total time in seconds
+  // Calculate total time in seconds
   const totalTimeInSeconds
     = (option.second || 0)
     + (option.minute || 0) * 60
     + (option.hour || 0) * 60 * 60
-  const { isPending, start: startTimer } = useTimeoutFn(() => {}, totalTimeInMilliseconds)
+  const { isPending, start: startTimer } = useTimeoutFn(
+    () => {},
+    totalTimeInMilliseconds,
+  )
   const { counter, reset, pause } = useInterval(1000, { controls: true })
-  watch(() => isPending, (oldVal, newVal) => {
-    if (oldVal && !newVal)
-      pause()
-  })
+  watch(
+    () => isPending,
+    (oldVal, newVal) => {
+      if (oldVal && !newVal)
+        pause()
+    },
+  )
   function resetTimer() {
     reset()
     startTimer()
@@ -64,7 +69,6 @@ export function useTimer(option: useTimerArgs) {
     resetTimer,
   }
 }
-
 
 // Lock Body Scroll ( Use With modals,Sheets and ... )
 export function useWebScrollLock() {
@@ -139,7 +143,8 @@ export function useGetRandomColor() {
   }
 
   return (type: 'background' | 'text'): string => {
-    const colorClasses = tailwindColorClasses[type] || tailwindColorClasses.background
+    const colorClasses
+      = tailwindColorClasses[type] || tailwindColorClasses.background
 
     return colorClasses[Math.floor(Math.random() * colorClasses.length)]
   }
@@ -176,7 +181,6 @@ export function useGetRandomHoverColor() {
       'hover:text-violet-500 dark:hover:text-violet-400',
       // Add more Tailwind color classes as needed
     ],
-
   }
   return (type: 'background' | 'text'): string => {
     const colorClasses = tailwindHoverColorClasses[type]
