@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     'nuxt-lucide-icons',
     '@vite-pwa/nuxt',
     '@nuxt/eslint',
-    'nuxt-build-cache',
   ],
   experimental: {
     watcher: 'parcel', // 'chokidar' or 'parcel' are also options
