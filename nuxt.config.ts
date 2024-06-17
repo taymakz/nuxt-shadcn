@@ -3,7 +3,9 @@ import { appDescription, appName } from './constants/index'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  future: {
+    compatibilityVersion: 4
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -90,7 +92,7 @@ export default defineNuxtConfig({
   },
   shadcn: {
     prefix: '',
-    componentDir: './components/ui',
+    componentDir: './app/components/ui',
   },
 
   runtimeConfig: {
