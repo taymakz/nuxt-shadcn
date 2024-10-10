@@ -15,6 +15,8 @@
         <div class="mt-10 flex items-center flex-wrap gap-6">
           <CAlert />
           <CBadge />
+          <CBreadcrumb />
+          <CButton/>
         </div>
       </div>
     </div>
