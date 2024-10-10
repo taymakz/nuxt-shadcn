@@ -5,7 +5,7 @@
 <template>
   <div>
     <div
-      class="relative flex min-h-screen w-full bg-background "
+      class="relative flex min-h-screen w-full bg-background  pb-20"
     >
       <div class="absolute left-2 top-2">
         <CommonToggleTheme />
@@ -16,7 +16,12 @@
           <CAlert />
           <CBadge />
           <CBreadcrumb />
-          <CButton/>
+          <CButton />
+        </div>
+        <div class="mt-10 flex items-center flex-wrap gap-6">
+          <div class="mx-auto">
+            <CCard />
+          </div>
         </div>
       </div>
     </div>
