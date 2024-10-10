@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { appTitle } from './constants';
+import { appTitle } from './constants'
 
 useHead({
   title: appTitle,
@@ -7,8 +7,10 @@ useHead({
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtLoadingIndicator :size="3" />
-    <NuxtPage />
-  </NuxtLayout>
+  <div vaul-drawer-wrapper>
+    <NuxtLayout>
+      <NuxtLoadingIndicator :size="3" />
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
