@@ -27,7 +27,6 @@ function toggle(event?: MouseEvent) {
     Math.max(x, innerWidth - x),
     Math.max(y, innerHeight - y),
   )
-  // @ts-expect-error: Transition API
   const transition = document.startViewTransition(async () => {
     isDark.value = !isDark.value
     await nextTick()
@@ -56,10 +55,10 @@ function toggle(event?: MouseEvent) {
 
 <template>
   <button
-    class="rounded-lg border p-2 duration-300 hover:bg-background"
+    class="rounded-lg border size-10 flex items-center justify-center duration-300 hover:bg-background text-muted-foreground "
     @click="toggle"
   >
-    <IconMoon class="dark:hidden" />
-    <IconSun class="hidden dark:block" />
+    <Icon name="i-lucide-sun" class="hidden dark:block size-5 " />
+    <Icon name="i-lucide-moon" class="dark:hidden  size-5" />
   </button>
 </template>

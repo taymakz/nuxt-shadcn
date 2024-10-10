@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import { appTitle } from './constants';
+
 useHead({
-  title: 'Nuxt Starter',
+  title: appTitle,
 })
 </script>
 
 <template>
-  <NuxtPwaAssets />
-
   <NuxtLayout>
     <NuxtLoadingIndicator :size="3" />
     <NuxtPage />

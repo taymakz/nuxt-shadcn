@@ -1,11 +1,12 @@
-import { pwa } from './config/pwa'
-import { appDescription, appName } from './constants/index'
+import { appDescription, appTitle } from "./app/constants";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   future: {
     compatibilityVersion: 4
   },
+
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -14,30 +15,25 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/seo',
-    'nuxt-lucide-icons',
-    '@vite-pwa/nuxt',
     '@nuxt/eslint',
+    '@nuxt/icon',
   ],
+
   experimental: {
-    watcher: 'parcel', // 'chokidar' or 'parcel' are also options
+    watcher: 'parcel', // 'chokidar' or 'parcel'
     payloadExtraction: false,
     renderJsonPayloads: true,
     typedPages: true,
+
   },
-  nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext',
-      },
-    },
-    prerender: {
-      routes: ['/'],
-    },
-  },
+
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
-      titleTemplate: '%s | Nuxt',
+      titleTemplate: `%s %separator ${appTitle}`,
+      templateParams: {
+        separator: '|'
+      },
       htmlAttrs: {
         dir: 'rtl',
         lang: 'fa-IR',
@@ -67,17 +63,20 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   site: {
     url: 'https://example.com',
-    name: appName,
+    name: appTitle,
     description: appDescription,
     defaultLocale: 'fa', // not needed if you have @nuxtjs/i18n installed
   },
+
   robots: {
     // provide simple disallow rules for all robots `user-agent: *`
     disallow: [],
     allow: '*',
   },
+
   ogImage: {
     defaults: {
       component: 'NuxtSeo',
@@ -86,12 +85,9 @@ export default defineNuxtConfig({
       },
     },
   },
-  pwa,
-  lucide: {
-    namePrefix: 'Icon',
-  },
+
   shadcn: {
-    prefix: '',
+    prefix: 'Ui',
     componentDir: './app/components/ui',
   },
 
@@ -102,15 +98,20 @@ export default defineNuxtConfig({
       domain: '', // Domain environment variable
     },
   },
+
   colorMode: {
     classSuffix: '',
   },
+
   tailwindcss: {
     viewer: false,
   },
+
   eslint: {
     config: {
       standalone: false,
     },
   },
+
+  compatibilityDate: '2024-10-10',
 })

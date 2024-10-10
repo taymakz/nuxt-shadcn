@@ -1,0 +1,5 @@
+export const appName = 'Starter'
+export const appTitle = 'Starter'
+export const appDescription = 'app description'
+export const appNameEn = 'Starter'
+export const appDesktopStartMinWidth = '(min-width: 1024px)'
