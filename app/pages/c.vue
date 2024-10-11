@@ -14,16 +14,17 @@
         <CAccordion />
         <div class="mt-10 flex items-center flex-wrap gap-6">
           <CAlert />
-          <CDialog/>
-          <CDrawer/>
-          <CResponsiveDialog/>
-          <CDropdown/>
+          <CDialog />
+          <CDrawer />
+          <CResponsiveDialog />
+          <CDropdown />
           <CBadge />
           <CBreadcrumb />
           <CButton />
           <CCheckbox />
           <CCombobox />
           <CHoverCard />
+          <CSelect />
         </div>
         <div class="mt-10 flex items-center flex-wrap gap-6">
           <div class="mx-auto">
