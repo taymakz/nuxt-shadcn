@@ -13,7 +13,7 @@ import {
   <Breadcrumb>
     <BreadcrumbList>
       <BreadcrumbItem>
-        <BreadcrumbLink>
+        <BreadcrumbLink as="div" as-child>
           <NuxtLink to="/">
             صفحه اصلی
           </NuxtLink>
@@ -21,7 +21,7 @@ import {
       </BreadcrumbItem>
       <BreadcrumbSeparator />
       <BreadcrumbItem>
-        <BreadcrumbLink>
+        <BreadcrumbLink as="div" as-child>
           <NuxtLink to="/c">
             صفحه المان ها
           </NuxtLink>
