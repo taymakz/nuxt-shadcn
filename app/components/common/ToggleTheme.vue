@@ -55,10 +55,10 @@ function toggle(event?: MouseEvent) {
 
 <template>
   <button
-    class="rounded-lg border size-10 flex items-center justify-center duration-300 hover:bg-background text-muted-foreground "
+    class="flex size-10 items-center justify-center rounded-lg border text-muted-foreground duration-300 hover:bg-background"
     @click="toggle"
   >
-    <Icon name="i-lucide-sun" class="hidden dark:block size-5 " />
-    <Icon name="i-lucide-moon" class="dark:hidden  size-5" />
+    <Icon name="i-lucide-sun" class="hidden size-5 dark:block" />
+    <Icon name="i-lucide-moon" class="size-5 dark:hidden" />
   </button>
 </template>

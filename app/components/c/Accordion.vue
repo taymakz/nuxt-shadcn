@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '../ui/accordion'
 
 const defaultValue = 'item-1'
 
@@ -9,9 +14,18 @@ const accordionItems = [
 </script>
 
 <template>
-  <div class="max-w-lg mx-auto">
-    <Accordion type="single" class="w-full" collapsible :default-value="defaultValue">
-      <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
+  <div class="mx-auto max-w-lg">
+    <Accordion
+      type="single"
+      class="w-full"
+      collapsible
+      :default-value="defaultValue"
+    >
+      <AccordionItem
+        v-for="item in accordionItems"
+        :key="item.value"
+        :value="item.value"
+      >
         <AccordionTrigger>{{ item.title }}</AccordionTrigger>
         <AccordionContent>
           {{ item.content }}

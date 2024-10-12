@@ -10,7 +10,6 @@ export default {
   darkMode: 'class',
   safelist: ['dark'],
   theme: {
-
     screens: {
       'xs': '480px',
       'sm': '640px',
@@ -110,8 +109,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out',
-        "caret-blink": "caret-blink 1.25s ease-out infinite",
-
+        'caret-blink': 'caret-blink 1.25s ease-out infinite',
       },
     },
   },

@@ -10,7 +10,7 @@ interface Props extends PrimitiveProps {
   class?: HTMLAttributes['class']
   loading?: boolean
   disabled?: boolean
-  hideContentOnLoading?:boolean
+  hideContentOnLoading?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -25,7 +25,12 @@ const props = withDefaults(defineProps<Props>(), {
     :class="cn(buttonVariants({ variant, size }), props.class)"
     :disabled="props.disabled || loading"
   >
-    <slot v-if="!loading || (loading && !hideContentOnLoading)"/>
-    <Icon v-if="loading" name="lucide-loader-2" class="animate-spin" :size="18" />
+    <slot v-if="!loading || (loading && !hideContentOnLoading)" />
+    <Icon
+      v-if="loading"
+      name="lucide-loader-2"
+      class="animate-spin"
+      :size="18"
+    />
   </Primitive>
 </template>

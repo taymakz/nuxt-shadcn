@@ -21,13 +21,15 @@ useHead({
     <div class="fixed z-50">
       <ClientOnly>
         <Toaster
-          :theme="color.value as 'dark' || 'light'" :position="!isDesktop ? 'top-center' : 'bottom-left'" close-button rich-colors :toast-options="{
+          :theme="(color.value as 'dark') || 'light'"
+          :position="!isDesktop ? 'top-center' : 'bottom-left'"
+          close-button
+          rich-colors
+          :toast-options="{
             style: {
               padding: '24px 32px',
               fontSize: '14px',
               fontFamily: 'IRANYekan',
-              
-
             },
             duration: 5000,
           }"

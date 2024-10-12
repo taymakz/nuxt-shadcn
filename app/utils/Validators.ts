@@ -44,15 +44,15 @@ export function validatePostalCode(postalCode: string): boolean {
   return postalCodeRegex.test(postalCode)
 }
 
-export function validateNationalCode(nationalCode: string): boolean {
-  if (!nationalCodeRegex.test(nationalCode))
+export function validateNationalCode(nationalCode?: string): boolean {
+  if (!nationalCode || nationalCode.length !== 10 || !nationalCodeRegex.test(nationalCode))
     return false
 
-  const check = Number.parseInt(nationalCode[9])
+  const check = Number.parseInt(nationalCode[9]!)
   let sum = 0
 
   for (let i = 0; i < 9; i++)
-    sum += Number.parseInt(nationalCode[i]) * (10 - i)
+    sum += Number.parseInt(nationalCode[i]!) * (10 - i)
 
   const remainder = sum % 11
 

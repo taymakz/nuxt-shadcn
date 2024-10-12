@@ -3,8 +3,8 @@ import { Textarea } from '@/components/ui/textarea'
 </script>
 
 <template>
-  <div class="flex gap-4 max-w-2xl w-full">
-    <Textarea label="Type your message here."  />
+  <div class="flex w-full max-w-2xl gap-4">
+    <Textarea label="Type your message here." />
     <Textarea variant="floating-label" label="Type your message here." />
   </div>
 </template>

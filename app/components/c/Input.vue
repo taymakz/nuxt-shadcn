@@ -3,10 +3,15 @@ import { Input } from '@/components/ui/input'
 </script>
 
 <template>
-  <div class="flex gap-4 max-w-xl w-full">
+  <div class="flex w-full max-w-xl gap-4">
     <Input dir="ltr" type="password" label="کلمه عبور" />
-    <Input  label="شماره موبایل یا ایمیل" />
-    <Input with-icon dir="ltr" variant="floating-label"  label="شماره موبایل یا ایمیل">
+    <Input label="شماره موبایل یا ایمیل" />
+    <Input
+      with-icon
+      dir="ltr"
+      variant="floating-label"
+      label="شماره موبایل یا ایمیل"
+    >
       <template #icon>
         <Icon name="lucide-check" :size="20" />
       </template>

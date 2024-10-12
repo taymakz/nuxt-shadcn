@@ -29,9 +29,7 @@ import {
       </BreadcrumbItem>
       <BreadcrumbSeparator />
       <BreadcrumbItem>
-        <BreadcrumbPage>
-          صفحه المان ها
-        </BreadcrumbPage>
+        <BreadcrumbPage> صفحه المان ها </BreadcrumbPage>
       </BreadcrumbItem>
     </BreadcrumbList>
   </Breadcrumb>

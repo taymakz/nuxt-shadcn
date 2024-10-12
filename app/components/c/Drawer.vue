@@ -10,9 +10,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
-
-import { ref } from 'vue'
-
 </script>
 
 <template>

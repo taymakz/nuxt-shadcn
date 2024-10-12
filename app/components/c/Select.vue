@@ -15,7 +15,7 @@ import {
     <SelectTrigger class="w-[280px]">
       <SelectValue placeholder="انتخاب کنید" />
     </SelectTrigger>
-    <SelectContent >
+    <SelectContent>
       <SelectGroup>
         <SelectLabel>North America</SelectLabel>
         <SelectItem value="est">

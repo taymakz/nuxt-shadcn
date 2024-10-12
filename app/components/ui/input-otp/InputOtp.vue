@@ -11,7 +11,7 @@ import Slot from './Slot.vue'
     inputmode="numeric"
     auto-focus
   >
-    <div class="flex w-full  justify-evenly gap-2">
+    <div class="flex w-full justify-evenly gap-2">
       <Slot v-for="(slot, idx) in slots" v-bind="slot" :key="idx" />
     </div>
   </OTPInput>

@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
 import type { ComboboxRootEmits, ComboboxRootProps } from 'radix-vue'
-import { ComboboxRoot, useForwardPropsEmits } from 'radix-vue'
 import { cn } from '@/utils/cn'
+import { ComboboxRoot, useForwardPropsEmits } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
 
-const props = withDefaults(defineProps<ComboboxRootProps & { class?: HTMLAttributes['class'] }>(), {
-  open: true,
-  modelValue: '',
-})
+const props = withDefaults(
+  defineProps<ComboboxRootProps & { class?: HTMLAttributes['class'] }>(),
+  {
+    open: true,
+    modelValue: '',
+  },
+)
 
 const emits = defineEmits<ComboboxRootEmits>()
 
@@ -23,7 +26,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <ComboboxRoot
     v-bind="forwarded"
-    :class="cn('flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground', props.class)"
+    :class="
+      cn(
+        'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground',
+        props.class,
+      )
+    "
   >
     <slot />
   </ComboboxRoot>

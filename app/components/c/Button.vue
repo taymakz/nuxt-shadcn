@@ -12,7 +12,7 @@ const d = ref(false)
     <Button :loading="d" variant="secondary" hide-content-on-loading>
       دومی
     </Button>
-    <Button :loading="d" variant="secondary" >
+    <Button :loading="d" variant="secondary">
       سومی
     </Button>
   </div>

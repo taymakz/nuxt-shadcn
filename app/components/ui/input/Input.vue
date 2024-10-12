@@ -1,28 +1,31 @@
 <script setup lang="ts">
-import type { HTMLAttributes, InputHTMLAttributes } from 'vue'
+import type { HTMLAttributes } from 'vue'
 import { cn } from '@/utils/cn'
 import { useField } from 'vee-validate'
 import { type InputVariants, inputVariants } from '.'
 
 type RegexType = 'ONLY_DIGIT' | 'ONLY_ALPHABET' | 'ONLY_DIGIT_ALPHABET'
 
-const props = withDefaults(defineProps<{
-  defaultValue?: string | number
-  class?: HTMLAttributes['class']
-  variant?: InputVariants['variant']
-  type?: HTMLInputElement['type']
-  mode?: RegexType
-  label?: string
-  name?: string
-  disabled?: boolean
-  readonly?: boolean
-  autofocus?: boolean
-  withErrorMessage?: boolean
-  withIcon?: boolean
-}>(), {
-  type: 'text',
-  variant: 'default',
-})
+const props = withDefaults(
+  defineProps<{
+    defaultValue?: string | number
+    class?: HTMLAttributes['class']
+    variant?: InputVariants['variant']
+    type?: HTMLInputElement['type']
+    mode?: RegexType
+    label?: string
+    name?: string
+    disabled?: boolean
+    readonly?: boolean
+    autofocus?: boolean
+    withErrorMessage?: boolean
+    withIcon?: boolean
+  }>(),
+  {
+    type: 'text',
+    variant: 'default',
+  },
+)
 
 const regexPatterns: Record<RegexType, RegExp> = {
   ONLY_DIGIT: /^\d*$/,
@@ -51,15 +54,29 @@ const passwordRevealed = ref(false)
 <template>
   <div class="relative w-full">
     <!-- Reveal Password Eye icon  -->
-    <span v-if="props.type === 'password' && ((modelValue && variant === 'floating-label') || (variant === 'default')) " class="absolute end-4 inset-y-0 flex items-center justify-center z-10">
-      <span class="text-muted-foreground cursor-pointer flex items-center justify-center" @click="passwordRevealed = !passwordRevealed">
+    <span
+      v-if="
+        props.type === 'password'
+          && ((modelValue && variant === 'floating-label') || variant === 'default')
+      "
+      class="absolute inset-y-0 end-4 z-10 flex items-center justify-center"
+    >
+      <span
+        class="flex cursor-pointer items-center justify-center text-muted-foreground"
+        @click="passwordRevealed = !passwordRevealed"
+      >
         <Icon v-show="!passwordRevealed" name="lucide-eye-off" :size="20" />
         <Icon v-show="passwordRevealed" name="lucide-eye" :size="20" />
       </span>
     </span>
     <!-- Icon -->
-    <div v-if="withIcon" class="absolute start-4 inset-y-0 flex items-center justify-center z-10 pointer-events-none">
-      <span class="text-muted-foreground cursor-pointer flex items-center justify-center">
+    <div
+      v-if="withIcon"
+      class="pointer-events-none absolute inset-y-0 start-4 z-10 flex items-center justify-center"
+    >
+      <span
+        class="flex cursor-pointer items-center justify-center text-muted-foreground"
+      >
         <slot name="icon" />
       </span>
     </div>
@@ -76,19 +93,21 @@ const passwordRevealed = ref(false)
         :readonly
         :placeholder="label"
         :type="passwordRevealed ? 'text' : props.type"
-        :class="cn(inputVariants({ variant }), props.class,
-                   { 'pe-12': props.type === 'password' },
-                   { 'ps-12': withIcon },
-        )"
+        :class="
+          cn(
+            inputVariants({ variant }),
+            props.class,
+            { 'pe-12': props.type === 'password' },
+            { 'ps-12': withIcon },
+          )
+        "
         @input="handleInput"
       >
     </template>
     <template v-else-if="variant === 'floating-label'">
       <label
         :for="name || randomId"
-        :class="cn(inputVariants({ variant }), props.class,
-
-        )"
+        :class="cn(inputVariants({ variant }), props.class)"
       >
         <input
           :id="name || randomId"
@@ -98,18 +117,16 @@ const passwordRevealed = ref(false)
           :disabled
           :readonly
           :type="passwordRevealed ? 'text' : props.type"
-          class="peer "
+          class="peer"
           :class="[
             { '!pe-12': props.type === 'password' },
             { '!ps-12': withIcon },
-
           ]"
-
           :placeholder="label"
           @input="handleInput"
         >
         <span
-          class="pointer-events-none absolute right-2.5 top-0 px-2 -translate-y-1/2 bg-background py-0.5 text-muted-foreground text-xs transition-all rounded-lg duration-300 peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm"
+          class="pointer-events-none absolute right-2.5 top-0 -translate-y-1/2 rounded-lg bg-background px-2 py-0.5 text-xs text-muted-foreground transition-all duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary"
         >
           {{ label }}
         </span>

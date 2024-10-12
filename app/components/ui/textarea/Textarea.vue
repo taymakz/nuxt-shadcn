@@ -3,14 +3,17 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '@/utils/cn'
 import { type TextareaVariants, textareaVariants } from '.'
 
-const props = withDefaults(defineProps<{
-  class?: HTMLAttributes['class']
-  variant?: TextareaVariants['variant']
-  label?: string
-  withErrorMessage?: boolean
-}>(), {
-  variant: 'default',
-})
+const props = withDefaults(
+  defineProps<{
+    class?: HTMLAttributes['class']
+    variant?: TextareaVariants['variant']
+    label?: string
+    withErrorMessage?: boolean
+  }>(),
+  {
+    variant: 'default',
+  },
+)
 
 const modelValue = defineModel<string | number>({ required: false })
 const randomId = useId()
@@ -39,7 +42,7 @@ const { errorMessage } = useField(randomId, undefined)
         />
 
         <span
-          class="pointer-events-none absolute start-2.5 top-0 px-2 -translate-y-1/2 bg-background py-0.5 text-muted-foreground text-xs transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:text-primary peer-focus:top-0 peer-focus:text-xs rounded-lg"
+          class="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 rounded-lg bg-background px-2 py-0.5 text-xs text-muted-foreground transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs peer-focus:text-primary"
         >
           {{ label }}
         </span>

@@ -1,18 +1,14 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <div
-      class="relative flex min-h-screen w-full bg-background  pb-20"
-    >
+    <div class="relative flex min-h-screen w-full bg-background pb-20">
       <div class="absolute left-2 top-2">
         <CommonToggleTheme />
       </div>
       <div class="container pt-20">
         <CAccordion />
-        <div class="mt-10 flex items-center flex-wrap gap-6">
+        <div class="mt-10 flex flex-wrap items-center gap-6">
           <CAlert />
           <CDialog />
           <CDrawer />
@@ -33,7 +29,7 @@
           <CInput />
           <CTextarea />
         </div>
-        <div class="mt-10 flex items-center flex-wrap gap-6">
+        <div class="mt-10 flex flex-wrap items-center gap-6">
           <div class="mx-auto">
             <CCard />
           </div>

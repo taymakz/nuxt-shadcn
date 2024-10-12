@@ -28,14 +28,10 @@ import { Label } from '@/components/ui/label'
       </DialogHeader>
       <div class="grid gap-4 py-4">
         <div class="grid grid-cols-4 items-center gap-4">
-          <Label for="name" class="text-right">
-            Name
-          </Label>
+          <Label for="name" class="text-right"> Name </Label>
         </div>
         <div class="grid grid-cols-4 items-center gap-4">
-          <Label for="username" class="text-right">
-            Username
-          </Label>
+          <Label for="username" class="text-right"> Username </Label>
         </div>
       </div>
       <DialogFooter>

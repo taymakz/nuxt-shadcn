@@ -61,7 +61,6 @@
   }
 }
 
-
 @layer base {
   @font-face {
     font-family: "IRANYekan";
@@ -155,7 +154,7 @@
     color-scheme: dark;
   }
 
-  .underline-c{
-    @apply relative after:absolute after:content-[''] after:left-0 after:top-7 after:h-px after:rounded-full after:bg-foreground after:w-full after:opacity-0 hover:after:opacity-100 after:duration-200
+  .underline-c {
+    @apply relative after:absolute after:left-0 after:top-7 after:h-px after:w-full after:rounded-full after:bg-foreground after:opacity-0 after:duration-200 after:content-[''] hover:after:opacity-100;
   }
 }

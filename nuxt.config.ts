@@ -1,10 +1,10 @@
-import { appDescription, appTitle } from "./app/constants";
+import { appDescription, appTitle } from './app/constants'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
   future: {
-    compatibilityVersion: 4
+    compatibilityVersion: 4,
   },
 
   modules: [
@@ -25,7 +25,6 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     renderJsonPayloads: true,
     typedPages: true,
-
   },
 
   app: {
@@ -33,7 +32,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width,initial-scale=1',
       titleTemplate: `%s %separator ${appTitle}`,
       templateParams: {
-        separator: '|'
+        separator: '|',
       },
       htmlAttrs: {
         dir: 'rtl',

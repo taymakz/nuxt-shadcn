@@ -4,10 +4,8 @@ import { InputOtp } from '../ui/input-otp'
 
 <template>
   <div dir="ltr">
-    <InputOtp  />
+    <InputOtp />
   </div>
 </template>
 
-<style>
-
-</style>
+<style></style>

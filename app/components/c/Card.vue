@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -33,8 +32,7 @@ const notifications = [
       <CardDescription>You have 3 unread messages.</CardDescription>
     </CardHeader>
     <CardContent class="grid gap-4">
-      <div class=" flex items-center space-x-4 rounded-md border p-4">
-      
+      <div class="flex items-center space-x-4 rounded-md border p-4">
         <div class="flex-1 space-y-1">
           <p class="text-sm font-medium leading-none">
             Push Notifications
@@ -43,11 +41,11 @@ const notifications = [
             Send notifications to device.
           </p>
         </div>
-     
       </div>
       <div>
         <div
-          v-for="(notification, index) in notifications" :key="index"
+          v-for="(notification, index) in notifications"
+          :key="index"
           class="mb-4 grid grid-cols-[25px_minmax(0,1fr)] items-start pb-4 last:mb-0 last:pb-0"
         >
           <span class="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
@@ -64,7 +62,7 @@ const notifications = [
     </CardContent>
     <CardFooter>
       <Button class="w-full">
-       Mark all as read
+        Mark all as read
       </Button>
     </CardFooter>
   </Card>

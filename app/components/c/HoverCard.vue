@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -34,7 +30,6 @@ import {
             Progressive JavaScript framework for building modern web interfaces.
           </p>
           <div class="flex items-center pt-2">
-         
             <span class="text-xs text-muted-foreground">
               Joined January 2014
             </span>

@@ -8,8 +8,10 @@ export const inputVariants = cva(
   {
     variants: {
       variant: {
-        'default': 'h-12 px-3 py-2 focus:border-primary transition-colors rtl:focus:placeholder:-translate-x-3 placeholder:transition-transform placeholder:duration-300 placeholder:text-right',
-        'floating-label': 'relative block [&_input]:px-4 [&_input]:py-3.5 [&_input]:rounded-lg  focus-within:border-primary cursor-text [&_input]:border-none [&_input]:bg-transparent [&_input]:w-full [&_input]:placeholder-transparent [&_input]:focus:border-transparent [&_input]:focus:outline-none [&_input]:outline-none',
+        'default':
+          'h-12 px-3 py-2 focus:border-primary transition-colors rtl:focus:placeholder:-translate-x-3 placeholder:transition-transform placeholder:duration-300 placeholder:text-right',
+        'floating-label':
+          'relative block [&_input]:px-4 [&_input]:py-3.5 [&_input]:rounded-lg  focus-within:border-primary cursor-text [&_input]:border-none [&_input]:bg-transparent [&_input]:w-full [&_input]:placeholder-transparent [&_input]:focus:border-transparent [&_input]:focus:outline-none [&_input]:outline-none',
       },
     },
     defaultVariants: {
