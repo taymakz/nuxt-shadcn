@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/eslint',
     '@nuxt/icon',
+    '@vee-validate/nuxt',
   ],
 
   experimental: {

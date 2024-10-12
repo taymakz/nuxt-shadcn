@@ -28,9 +28,9 @@
           <CSonner />
           <CSwitch />
           <CTooltip />
-          <div class="mx-auto">
-            <CInputOtp />
-          </div>
+
+          <CInputOtp />
+          <CInput />
         </div>
         <div class="mt-10 flex items-center flex-wrap gap-6">
           <div class="mx-auto">

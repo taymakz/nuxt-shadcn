@@ -30,60 +30,62 @@ const isOpen = ref(false)
 </script>
 
 <template>
-  <UseTemplate>
-    <form class="grid items-start gap-4 px-4">
-      <div class="grid gap-2">
-        <Label html-for="email">Email</Label>
-        j
-      </div>
-      <div class="grid gap-2">
-        <Label html-for="username">Username</Label>
-        j
-      </div>
-      <Button type="submit">
-        Save changes
-      </Button>
-    </form>
-  </UseTemplate>
+  <ClientOnly>
+    <UseTemplate>
+      <form class="grid items-start gap-4 px-4">
+        <div class="grid gap-2">
+          <Label html-for="email">Email</Label>
+          j
+        </div>
+        <div class="grid gap-2">
+          <Label html-for="username">Username</Label>
+          j
+        </div>
+        <Button type="submit">
+          Save changes
+        </Button>
+      </form>
+    </UseTemplate>
 
-  <Dialog v-if="isDesktop" v-model:open="isOpen">
-    <DialogTrigger as-child>
-      <Button variant="outline">
-        Responsive Dialog
-      </Button>
-    </DialogTrigger>
-    <DialogContent class="sm:max-w-[425px]">
-      <DialogHeader>
-        <DialogTitle>Responsive Dialog</DialogTitle>
-        <DialogDescription>
-          Make changes to your profile here. Click save when you're done.
-        </DialogDescription>
-      </DialogHeader>
-      <GridForm />
-    </DialogContent>
-  </Dialog>
+    <Dialog v-if="isDesktop" v-model:open="isOpen">
+      <DialogTrigger as-child>
+        <Button variant="outline">
+          Responsive Dialog
+        </Button>
+      </DialogTrigger>
+      <DialogContent class="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Responsive Dialog</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <GridForm />
+      </DialogContent>
+    </Dialog>
 
-  <Drawer v-else v-model:open="isOpen">
-    <DrawerTrigger as-child>
-      <Button variant="outline">
-        Responsive Dialog
-      </Button>
-    </DrawerTrigger>
-    <DrawerContent>
-      <DrawerHeader class="text-left">
-        <DrawerTitle>Responsive Dialog</DrawerTitle>
-        <DrawerDescription>
-          Make changes to your profile here. Click save when you're done.
-        </DrawerDescription>
-      </DrawerHeader>
-      <GridForm />
-      <DrawerFooter class="pt-2">
-        <DrawerClose as-child>
-          <Button variant="outline">
-            Cancel
-          </Button>
-        </DrawerClose>
-      </DrawerFooter>
-    </DrawerContent>
-  </Drawer>
+    <Drawer v-else v-model:open="isOpen">
+      <DrawerTrigger as-child>
+        <Button variant="outline">
+          Responsive Dialog
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Responsive Dialog</DrawerTitle>
+          <DrawerDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DrawerDescription>
+        </DrawerHeader>
+        <GridForm />
+        <DrawerFooter class="pt-2">
+          <DrawerClose as-child>
+            <Button variant="outline">
+              Cancel
+            </Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  </ClientOnly>
 </template>
