@@ -31,6 +31,7 @@
 
           <CInputOtp />
           <CInput />
+          <CTextarea />
         </div>
         <div class="mt-10 flex items-center flex-wrap gap-6">
           <div class="mx-auto">
