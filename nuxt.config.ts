@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     'nuxt-phosphor-icons',
     '@nuxtjs/google-fonts',
     'dayjs-nuxt',
+    '@vee-validate/nuxt',
     './app/modules/shadcn',
   ],
   imports: {

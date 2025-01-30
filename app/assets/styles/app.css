@@ -23,8 +23,8 @@
   --color-alert: var(--color-yellow-500);
   --color-alert-lighter: var(--color-yellow-400);
 
-  --color-brand: var(--color-rose-500);
-  --color-brand-lighter: var(--color-rose-400);
+  --color-brand: var(--color-indigo-500);
+  --color-brand-lighter: var(--color-indigo-400);
 
   --color-warning: var(--color-red-500);
   --color-warning-lighter: var(--color-red-400);
@@ -47,8 +47,8 @@
   --color-card-foreground: var(--color-neutral-100);
   --color-card-muted: var(--color-neutral-400);
 
-  --color-primary: var(--color-rose-700);
-  --color-primary-lighter: var(--color-rose-600);
+  --color-primary: var(--color-indigo-700);
+  --color-primary-lighter: var(--color-indigo-600);
   --color-primary-foreground: var(--color-white);
 
   --color-secondary: oklch(26.53% 0.0037 286.15);
@@ -72,7 +72,7 @@
   --color-border: color-mix(in oklab, var(--color-white) 10%, transparent);
   --color-border-lighter: color-mix(
     in oklab,
-    var(--color-white) 10%,
+    var(--color-white) 15%,
     transparent
   );
   --color-ring: color-mix(in oklab, var(--color-white) 15%, transparent);

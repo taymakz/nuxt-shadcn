@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { ClientOnly } from '#components';
+
+
 </script>
 
 <template>
-  <div class="container py-20 space-y-10">
+  <ClientOnly>
+    <div class="container py-20 space-y-10">
     <DemoButton />
     <DemoAccordion />
     <DemoAlertDialog />
@@ -19,6 +23,7 @@
       <DemoDropdown />
       <DemoTooltip />
     </div>
-    <!-- <DemoCard /> -->
+    <DemoCard />
   </div>
+  </ClientOnly>
 </template>
