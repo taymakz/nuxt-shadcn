@@ -3,15 +3,11 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '@/utils/cn'
 import { SelectLabel, type SelectLabelProps } from 'radix-vue'
 
-const props = defineProps<
-  SelectLabelProps & { class?: HTMLAttributes['class'] }
->()
+const props = defineProps<SelectLabelProps & { class?: HTMLAttributes['class'] }>()
 </script>
 
 <template>
-  <SelectLabel
-    :class="cn('py-1.5 pe-8 ps-2 text-sm font-semibold', props.class)"
-  >
+  <SelectLabel :class="cn('py-1.5 pl-2 pr-2 text-sm font-semibold text-right', props.class)">
     <slot />
   </SelectLabel>
 </template>

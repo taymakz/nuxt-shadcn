@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { Toaster } from '@/components/ui/sonner'
-import { appDesktopStartMinWidth, appTitle } from './constants'
+import { appDesktopStartMinWidth } from './constants'
 
 const color = useColorMode()
 const isDesktop = useMediaQuery(appDesktopStartMinWidth)
-useHead({
-  title: appTitle,
-})
+
 </script>
 
 <template>
@@ -38,3 +36,18 @@ useHead({
     </div>
   </div>
 </template>
+<style>
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.2s;
+}
+
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+}
+</style>

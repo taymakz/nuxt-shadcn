@@ -1,32 +1,25 @@
+import tailwindcss from '@tailwindcss/vite'
 import { appDescription, appTitle } from './app/constants'
-
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-
-  future: {
-    compatibilityVersion: 4,
-  },
-
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    'shadcn-nuxt',
-    '@nuxt/image',
-    '@vueuse/nuxt',
-    '@pinia/nuxt',
-    '@nuxtjs/seo',
     '@nuxt/eslint',
-    '@nuxt/icon',
-    '@vee-validate/nuxt',
+    'motion-v/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
+    'nuxt-lucide-icons',
+    'nuxt-phosphor-icons',
+    '@nuxtjs/google-fonts',
+    'dayjs-nuxt',
+    './app/modules/shadcn',
   ],
-
-  experimental: {
-    watcher: 'parcel', // 'chokidar' or 'parcel'
-    payloadExtraction: false,
-    renderJsonPayloads: true,
-    typedPages: true,
+  imports: {
+    dirs: [
+      // scan all modules
+      'composables/**',
+    ],
   },
-
+  devtools: { enabled: false },
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
@@ -46,72 +39,71 @@ export default defineNuxtConfig({
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: appDescription },
-        {
-          name: 'apple-mobile-web-app-status-bar-style',
-          content: 'black-translucent',
-        },
-        {
-          name: 'theme-color',
-          media: '(prefers-color-scheme: light)',
-          content: '#F4F4F5',
-        },
-        {
-          name: 'theme-color',
-          media: '(prefers-color-scheme: dark)',
-          content: '#09090B',
-        },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        { name: 'theme-color', media: '(prefers-color-scheme: light)', content: 'white' },
+        { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#222222' },
       ],
     },
   },
-
-  site: {
-    url: 'https://example.com',
-    name: appTitle,
-    description: appDescription,
-    defaultLocale: 'fa', // not needed if you have @nuxtjs/i18n installed
-  },
-
-  robots: {
-    // provide simple disallow rules for all robots `user-agent: *`
-    disallow: [],
-    allow: '*',
-  },
-
-  ogImage: {
-    defaults: {
-      component: 'NuxtSeo',
-      props: {
-        colorMode: 'dark',
-      },
-    },
-  },
-
-  shadcn: {
-    prefix: 'Ui',
-    componentDir: './app/components/ui',
-  },
-
-  runtimeConfig: {
-    public: {
-      baseApi: '', // Base Api environment variable
-      baseStorage: '', // Base Media environment variable
-      domain: '', // Domain environment variable
-    },
-  },
+  css: [
+    '~/assets/styles/app.css',
+  ],
 
   colorMode: {
     classSuffix: '',
   },
-
-  tailwindcss: {
-    viewer: false,
+  future: {
+    compatibilityVersion: 4,
   },
-
+  experimental: {
+    payloadExtraction: false,
+    renderJsonPayloads: true,
+    typedPages: true,
+    watcher: 'parcel',
+  },
+  compatibilityDate: '2024-11-01',
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
+  dayjs: {
+    locales: ['fa'],
+    plugins: ['relativeTime', 'timezone'],
+    defaultLocale: ['fa', {
+      relativeTime: {
+        future: 'در %s',
+        past: '%s قبل',
+        s: 'چند ثانیه',
+        m: 'یک دقیقه',
+        mm: '%d دقیقه',
+        h: 'یک ساعت',
+        hh: '%d ساعت',
+        d: 'یک روز',
+        dd: '%d روز',
+        M: 'یک ماه',
+        MM: '%d ماه',
+        y: 'یک سال',
+        yy: '%d سال',
+      },
+    }],
+    defaultTimezone: 'Asia/Tehran',
+  },
   eslint: {
     config: {
       standalone: false,
+      nuxt: {
+        sortConfigKeys: true,
+      },
     },
   },
+  googleFonts: {
+    families: {
+      'Inter': [400, 500],
+      'DM Mono': [400, 500],
+      'Roboto Condensed': [400, 500],
+      'Bad Script': [400, 500],
 
-  compatibilityDate: '2024-10-10',
+    },
+  },
 })

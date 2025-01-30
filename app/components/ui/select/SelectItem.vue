@@ -1,17 +1,18 @@
 <script setup lang="ts">
+import type { SelectItemProps } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
 import { cn } from '@/utils/cn'
+import { Check } from 'lucide-vue-next'
 import {
   SelectItem,
   SelectItemIndicator,
-  type SelectItemProps,
+
   SelectItemText,
   useForwardProps,
 } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import { computed } from 'vue'
 
-const props = defineProps<
-  SelectItemProps & { class?: HTMLAttributes['class'] }
->()
+const props = defineProps<SelectItemProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -25,9 +26,10 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <SelectItem
     v-bind="forwardedProps"
+    dir="rtl"
     :class="
       cn(
-        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pe-2 ps-4 text-start text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent   focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
         props.class,
       )
     "
@@ -35,9 +37,9 @@ const forwardedProps = useForwardProps(delegatedProps)
     <SelectItemText>
       <slot />
     </SelectItemText>
-    <span class="absolute end-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectItemIndicator>
-        <Icon name="lucide-check" class="size-4" />
+        <Check class="h-4 w-4" />
       </SelectItemIndicator>
     </span>
   </SelectItem>

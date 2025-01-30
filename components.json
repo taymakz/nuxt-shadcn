@@ -4,10 +4,11 @@
   "typescript": true,
   "tsConfigPath": ".nuxt/tsconfig.json",
   "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "app/assets/styles/app.css",
-    "baseColor": "zinc",
-    "cssVariables": true
+    "config": "tailwind.config.js",
+    "css": "assets/css/tailwind.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
   },
   "framework": "nuxt",
   "aliases": {

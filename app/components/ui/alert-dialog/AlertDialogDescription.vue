@@ -6,9 +6,7 @@ import {
 } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<
-  AlertDialogDescriptionProps & { class?: HTMLAttributes['class'] }
->()
+const props = defineProps<AlertDialogDescriptionProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -20,7 +18,7 @@ const delegatedProps = computed(() => {
 <template>
   <AlertDialogDescription
     v-bind="delegatedProps"
-    :class="cn('text-sm text-muted-foreground', props.class)"
+    :class="cn('text-sm text-card-muted', props.class)"
   >
     <slot />
   </AlertDialogDescription>

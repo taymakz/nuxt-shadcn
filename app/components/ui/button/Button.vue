@@ -1,15 +1,16 @@
 <script setup lang="ts">
+import type { PrimitiveProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { ButtonVariants } from '.'
 import { cn } from '@/utils/cn'
-import { Primitive, type PrimitiveProps } from 'radix-vue'
-import { type ButtonVariants, buttonVariants } from '.'
+import { Primitive } from 'radix-vue'
+import { buttonVariants } from '.'
 
 interface Props extends PrimitiveProps {
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
   class?: HTMLAttributes['class']
   loading?: boolean
-  disabled?: boolean
   hideContentOnLoading?: boolean
 }
 
@@ -23,14 +24,9 @@ const props = withDefaults(defineProps<Props>(), {
     :as="as"
     :as-child="asChild"
     :class="cn(buttonVariants({ variant, size }), props.class)"
-    :disabled="props.disabled || loading"
+    :disabled="loading || $attrs.disabled"
   >
     <slot v-if="!loading || (loading && !hideContentOnLoading)" />
-    <Icon
-      v-if="loading"
-      name="lucide-loader-2"
-      class="animate-spin"
-      :size="18"
-    />
+    <LucideLoader2 v-show="loading" class="size-4.5 animate-spin" />
   </Primitive>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/utils/cn'
+import { ChevronDown } from 'lucide-vue-next'
 import {
   AccordionHeader,
   AccordionTrigger,
@@ -7,9 +8,7 @@ import {
 } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<
-  AccordionTriggerProps & { class?: HTMLAttributes['class'] }
->()
+const props = defineProps<AccordionTriggerProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -24,17 +23,15 @@ const delegatedProps = computed(() => {
       v-bind="delegatedProps"
       :class="
         cn(
-          'flex flex-1 items-center justify-between py-4 font-medium transition-all [&[data-state=open]>span]:rotate-180',
+          'flex flex-1 items-center justify-between py-4 font-medium transition-all [&[data-state=open]>svg]:rotate-90',
           props.class,
         )
       "
     >
       <slot />
-
       <slot name="icon">
-        <Icon
-          name="lucide-chevron-down"
-          class="size-4 shrink-0 transition-transform duration-200"
+        <ChevronDown
+          class="h-4 w-4 shrink-0 transition-transform duration-200"
         />
       </slot>
     </AccordionTrigger>
