@@ -28,6 +28,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.0",
     "@vee-validate/nuxt": "^4.15.0",
+    "@vee-validate/yup": "^4.15.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "consola": "^3.4.0",

@@ -57,6 +57,9 @@ importers:
       '@vee-validate/nuxt':
         specifier: ^4.15.0
         version: 4.15.0(magicast@0.3.5)(rollup@4.32.1)(vue@3.5.13(typescript@5.7.3))
+      '@vee-validate/yup':
+        specifier: ^4.15.0
+        version: 4.15.0(vue@3.5.13(typescript@5.7.3))(yup@1.6.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1227,6 +1230,11 @@ packages:
 
   '@vee-validate/nuxt@4.15.0':
     resolution: {integrity: sha512-AhQHPLxH4tTf35op+ifkBhnnRwv/EzT8Fi9PQlEwKyLGZgepFQO1qTm6IyaA6aoSKcFWHz3R3hyMrMQdXbiOxQ==}
+
+  '@vee-validate/yup@4.15.0':
+    resolution: {integrity: sha512-paK2ZdxZJRrUGwqaqf7KMNC+n5C7UGs7DofK7wZCza/zKT/QtFSxVYgopGoYYrbAfd6DpVmNpf/ouBuRdPBthA==}
+    peerDependencies:
+      yup: ^1.3.2
 
   '@vercel/nft@0.27.10':
     resolution: {integrity: sha512-zbaF9Wp/NsZtKLE4uVmL3FyfFwlpDyuymQM1kPbeT0mVOHKDQQNjnnfslB3REg3oZprmNFJuh3pkHBk2qAaizg==}
@@ -5890,6 +5898,14 @@ snapshots:
       - magicast
       - rollup
       - supports-color
+      - vue
+
+  '@vee-validate/yup@4.15.0(vue@3.5.13(typescript@5.7.3))(yup@1.6.1)':
+    dependencies:
+      type-fest: 4.33.0
+      vee-validate: 4.15.0(vue@3.5.13(typescript@5.7.3))
+      yup: 1.6.1
+    transitivePeerDependencies:
       - vue
 
   '@vercel/nft@0.27.10(rollup@4.32.1)':
